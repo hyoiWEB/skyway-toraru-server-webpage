@@ -236,7 +236,7 @@ $(function() {
       console.log('connect');
 
           socket.emit("sendMessageToServer", frontPeer);
-          console.log('送信しました。');
+          console.log('送信しました。',frontPeer);
       });
 
     }else{
