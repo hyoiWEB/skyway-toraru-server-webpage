@@ -1,20 +1,21 @@
-<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>GENCHI</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://onesignal-server.herokuapp.com/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script type="text/javascript" src="/js/script.js"></script>
   <script>
   function fullscreen(){
   alert('画面の最大化を戻す場合はESCキーを押してください');
-  	var elem = document.getElementById("their-video");
-  	if (elem.webkitRequestFullscreen) {
-    	elem.webkitRequestFullscreen();
-	  //alert('画面の最大化を戻す場合はESCキーを押してください');
-	}
+    var elem = document.getElementById("their-video");
+    if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    //alert('画面の最大化を戻す場合はESCキーを押してください');
+  }
   }
   </script>
 </head>
@@ -25,7 +26,7 @@
 
   <!-- Video area -->
   <div class="pure-u-2-3" id="video-container">
-    <div id="their-video-box">
+     <div id="their-video-box">
       <video id="their-video" autoplay playsinline controls></video>
     </div>
     <!--<button type=button onclick="fullscreen()">画面を最大表示に変更</button>-->

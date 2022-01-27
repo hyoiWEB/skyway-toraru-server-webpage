@@ -229,18 +229,16 @@ $(function() {
       $('#callto-id').val(key);
       $('#call').click();
 
-      var socket = io();
-            var el;
+      let frontPeer = JSON.stringify(call.remoteId);
+      socket = io.connect("https://onesignal-server-test.herokuapp.com/");
 
-            socket.on('connect', () => {
-                console.log('connect');
-                if (sended == false){
-                  let frontPeer = JSON.stringify($('#callto-id').val());
-                  socket.emit("sendMessageToServer", frontPeer);
-                  console.log('送信しました。',$('#callto-id').val());
-                  sended = true;
-                } 
-            }); 
+      socket.on('connect', () => {
+      console.log('connect');
+
+          socket.emit("sendMessageToServer", frontPeer);
+          console.log('送信しました。');
+      });
+
     }else{
       alert('＜＜＜＜通知＞＞＞＞\n接続が切れました。\n再接続する場合は更新してください。'); 
       setTimeout("window.close()", 2000);
