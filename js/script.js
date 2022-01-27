@@ -12,7 +12,7 @@ if(match) {
 $(function() {
   // Peer object
   const peer = new Peer({
-    key:   "6ffb6f8b-4291-49d3-8558-d4b3f3309b48",
+    key:   "bc3292a3-35bd-4289-ac50-359c8100377c",
     debug: 3,
   });
 
